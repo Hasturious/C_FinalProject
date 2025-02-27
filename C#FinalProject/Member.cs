@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_FinalProject
 {
-    public abstract class Member
+    public abstract class Member : IMembership
     {
         private string Name; { get; set; }
         private string ID; { get; set; }

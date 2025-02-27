@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace C_FinalProject
 {
-    internal interface IMembership
+    public internal interface IMembership
     {
+        string MembershipPlan { get; set; }
     }
 }
