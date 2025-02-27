@@ -40,7 +40,14 @@
                                     string membershipType = Console.ReadLine();
                                     if (membershipType != "Standard" && membershipType != "Special" || string.IsNullOrWhiteSpace(membershipType))
                                     {
-                                        throw new ArgumentException("Species cannot be not of the two options.");
+                                        throw new ArgumentException("Membership type must be of the two options.");
+                                    }
+
+                                    Console.WriteLine("Enter Membership Plan. The peroid of time between payments. (Monthly/Annually): ");
+                                    string membershipPlan = Console.ReadLine();
+                                    if (membershipType != "Monthly" && membershipType != "Annually" || string.IsNullOrWhiteSpace(membershipType))
+                                    {
+                                        throw new ArgumentException("Membership plan must be of the two options.");
                                     }
 
                                     Console.Write("Create User ID");
