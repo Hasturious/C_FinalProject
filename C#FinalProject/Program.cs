@@ -29,15 +29,29 @@
                             {
                                 try
                                 {
-                                    Console.Write("Enter the name of the new member");
+                                    Console.Write("Enter the name of the new member: ");
                                     string name = Console.ReadLine();
                                     if (string.IsNullOrWhiteSpace(name))
                                     {
                                         throw new ArgumentException("Name cannot be null or empty.");
                                     }
 
-                                    Console.Write("Enter the species of the lion: ");
-                                    string species = Console.ReadLine();
+                                    Console.WriteLine("Enter Membership Type. We offer discounts to veterans and students. (Standard/Sepecial): ");
+                                    string membershipType = Console.ReadLine();
+                                    if (membershipType != "Standard" && membershipType != "Special" || string.IsNullOrWhiteSpace(membershipType))
+                                    {
+                                        throw new ArgumentException("Species cannot be not of the two options.");
+                                    }
+
+                                    Console.Write("Create User ID");
+                                    string ID = Console.ReadLine();
+                                    if (string.IsNullOrWhiteSpace(ID))
+                                    {
+                                        throw new ArgumentException("ID cannot be null or empty.");
+                                    }
+
+                                    Member members = new Member(name, membershipType, ID);
+
                                 }
 
                                 catch (ArgumentException ex)
