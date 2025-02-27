@@ -7,7 +7,7 @@
             //Gonna start with recreating my Pseudo code and go from there
 
             //Define our memberlist
-            List<Member> members = new List<Member>();
+            List<Member> membersList = new List<Member>();
 
             string menuChoice = "0";
 
@@ -36,20 +36,6 @@
                                         throw new ArgumentException("Name cannot be null or empty.");
                                     }
 
-                                    Console.WriteLine("Enter Membership Type. We offer discounts to veterans and students. (Standard/Sepecial): ");
-                                    string membershipType = Console.ReadLine();
-                                    if (membershipType != "Standard" && membershipType != "Special" || string.IsNullOrWhiteSpace(membershipType))
-                                    {
-                                        throw new ArgumentException("Membership type must be of the two options.");
-                                    }
-
-                                    Console.WriteLine("Enter Membership Plan. The peroid of time between payments. (Monthly/Annually): ");
-                                    string membershipPlan = Console.ReadLine();
-                                    if (membershipType != "Monthly" && membershipType != "Annually" || string.IsNullOrWhiteSpace(membershipType))
-                                    {
-                                        throw new ArgumentException("Membership plan must be of the two options.");
-                                    }
-
                                     Console.Write("Create User ID");
                                     string ID = Console.ReadLine();
                                     if (string.IsNullOrWhiteSpace(ID))
@@ -57,7 +43,24 @@
                                         throw new ArgumentException("ID cannot be null or empty.");
                                     }
 
-                                    Member members = new Member(name, membershipType, ID);
+
+                                    Console.WriteLine("Enter Membership Plan. The peroid of time between payments. (Monthly/Annually): ");
+                                    string membershipPlan = Console.ReadLine();
+                                    if (membershipPlan != "Monthly" && membershipPlan != "Annually" || string.IsNullOrWhiteSpace(membershipPlan))
+                                    {
+                                        throw new ArgumentException("Membership plan must be of the two options.");
+                                    }
+
+                                    Member newMember = new Member(name, ID, membershipPlan);
+                                    membersList.Add(newMember);
+                                    /*
+                                    Console.WriteLine("Enter Membership Type. We offer discounts to veterans and students. (Standard/Sepecial): ");
+                                    string membershipType = Console.ReadLine();
+                                    if (membershipType != "Standard" && membershipType != "Special" || string.IsNullOrWhiteSpace(membershipType))
+                                    {
+                                        throw new ArgumentException("Membership type must be of the two options.");
+                                    }
+                                    */
 
                                 }
 

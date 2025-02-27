@@ -8,9 +8,17 @@ namespace C_FinalProject
 {
     public abstract class Member
     {
-        private string _name;
-        private string _ID;
-        private string _MemberType
+        private string Name; { get; set; }
+        private string ID; { get; set; }
+        private string MembershipType; { get; set; }
+
+        //Constructor for name, id , and membershipPlan
+        public Member(string name, string id, string membershipPlan)
+        {
+            Name = name;
+            ID = id;
+            MembershipType = membershipPlan;
+        }
 
     }
 }
