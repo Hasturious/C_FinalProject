@@ -36,7 +36,7 @@
                                         throw new ArgumentException("Name cannot be null or empty.");
                                     }
 
-                                    Console.Write("Create User ID");
+                                    Console.Write("\nCreate User ID: ");
                                     string ID = Console.ReadLine();
                                     if (string.IsNullOrWhiteSpace(ID))
                                     {
@@ -44,18 +44,15 @@
                                     }
 
 
-                                    Console.WriteLine("Enter Membership Plan. The peroid of time between payments. (Monthly/Annually): ");
+                                    Console.Write("\nEnter Membership Plan. The peroid of time between payments. (Monthly/Annually): ");
                                     string membershipPlan = Console.ReadLine();
                                     if (string.IsNullOrWhiteSpace(membershipPlan) || membershipPlan != "Monthly" && membershipPlan != "Annually")
                                     {
                                         throw new ArgumentException("Membership plan must be of the two options.");
                                     }
 
-                                    Member newMember = new Member(name, ID, membershipPlan);
-                                    membersList.Add(newMember);
-
                                     
-                                    Console.WriteLine("Enter Membership Type. We offer discounts to veterans and students. (Standard/Sepecial): ");
+                                    Console.Write("\nEnter Membership Type. We offer discounts to veterans and students. (Standard/Special): ");
                                     string membershipType = Console.ReadLine();
                                     if (membershipType != "Standard" && membershipType != "Special" || string.IsNullOrWhiteSpace(membershipType))
                                     {
@@ -64,12 +61,14 @@
 
                                     if (membershipType == "Standard")
                                     {
-
+                                        StandardMember newStandardMember = new StandardMember(name, ID, membershipPlan);
+                                        membersList.Add(newStandardMember);
                                     }
 
                                     if (membershipType == "Special")
                                     {
-
+                                        SpecialMember newSpecialMember = new SpecialMember(name, ID, membershipPlan);
+                                        membersList.Add(newSpecialMember);
                                     }
 
                                 }
@@ -94,13 +93,17 @@
                             }
                         case "3":
                             {
-                                try
+                                if (membersList.Count == 0)
                                 {
-
+                                    Console.WriteLine("No members found.");
                                 }
-                                catch (ArgumentException ex)
+                                else
                                 {
-
+                                    Console.WriteLine("List of Members:");
+                                    foreach (Member member in membersList)
+                                    {
+                                        Console.WriteLine(member); // Calls ToString() automatically
+                                    }
                                 }
                                 break;
                             }
@@ -118,6 +121,7 @@
                             }
                         case "5":
                             {
+                                Console.WriteLine("Closing Program");
                                 break;
                             }
                     }
