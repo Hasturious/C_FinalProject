@@ -8,6 +8,9 @@ namespace C_FinalProject
 {
     internal class SpecialMember : Member
     {
-        public SpecialMember(string name, string id, string membershipPlan) : base(name, id, membershipPlan) { }
+        public SpecialMember(string name, string id, string membershipPlan) : base(name, id, membershipPlan)
+        {
+            MemberType = "Special";
+        }
     }
 }
