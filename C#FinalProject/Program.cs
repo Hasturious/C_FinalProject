@@ -46,21 +46,31 @@
 
                                     Console.WriteLine("Enter Membership Plan. The peroid of time between payments. (Monthly/Annually): ");
                                     string membershipPlan = Console.ReadLine();
-                                    if (membershipPlan != "Monthly" && membershipPlan != "Annually" || string.IsNullOrWhiteSpace(membershipPlan))
+                                    if (string.IsNullOrWhiteSpace(membershipPlan) || membershipPlan != "Monthly" && membershipPlan != "Annually")
                                     {
                                         throw new ArgumentException("Membership plan must be of the two options.");
                                     }
 
                                     Member newMember = new Member(name, ID, membershipPlan);
                                     membersList.Add(newMember);
-                                    /*
+
+                                    
                                     Console.WriteLine("Enter Membership Type. We offer discounts to veterans and students. (Standard/Sepecial): ");
                                     string membershipType = Console.ReadLine();
                                     if (membershipType != "Standard" && membershipType != "Special" || string.IsNullOrWhiteSpace(membershipType))
                                     {
                                         throw new ArgumentException("Membership type must be of the two options.");
                                     }
-                                    */
+
+                                    if (membershipType == "Standard")
+                                    {
+
+                                    }
+
+                                    if (membershipType == "Special")
+                                    {
+
+                                    }
 
                                 }
 
@@ -68,6 +78,46 @@
                                 {
                                     Console.WriteLine($"Error: {ex.Message}");
                                 }
+                                break;
+                            }
+                        case "2":
+                            {
+                                try
+                                {
+
+                                }
+                                catch (ArgumentException ex)
+                                {
+
+                                }
+                                break;
+                            }
+                        case "3":
+                            {
+                                try
+                                {
+
+                                }
+                                catch (ArgumentException ex)
+                                {
+
+                                }
+                                break;
+                            }
+                        case "4":
+                            {
+                                try
+                                {
+
+                                }
+                                catch (ArgumentException ex)
+                                {
+
+                                }
+                                break;
+                            }
+                        case "5":
+                            {
                                 break;
                             }
                     }

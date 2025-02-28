@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace C_FinalProject
 {
-    public interface IMembership
+    class StandardMember : Member
     {
-        void ChangeMembershipPlan(string newPlan);
+        public StandardMember(string name, string id, string membershipPlan) : base(name, id, membershipPlan) { }
     }
 }
