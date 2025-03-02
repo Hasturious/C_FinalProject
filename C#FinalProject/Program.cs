@@ -6,8 +6,9 @@
         {
             //Gonna start with recreating my Pseudo code and go from there
 
-            //Define our memberlist
-            List<Member> membersList = new List<Member>();
+
+            //
+            MemberUtility memberUtility = new MemberUtility();
 
             string menuChoice = "0";
 
@@ -25,10 +26,12 @@
 
                     switch (menuChoice)
                     {
+                        
                         case "1":
                             {
-                                try
+                                /*try
                                 {
+
                                     Console.Write("Enter the name of the new member: ");
                                     string name = Console.ReadLine();
                                     if (string.IsNullOrWhiteSpace(name))
@@ -76,14 +79,42 @@
                                 catch (ArgumentException ex)
                                 {
                                     Console.WriteLine($"Error: {ex.Message}");
-                                }
+                                }*/
+                                memberUtility.AddMember();
                                 break;
                             }
+                        
                         case "2":
                             {
                                 try
                                 {
+                                    Console.Write("Enter User ID to remove them from system: ");
+                                    string removeID = Console.ReadLine();
 
+                                    //Find member from list
+                                    /*
+                                    Member removedMember = null;
+
+                                    foreach (Member member in membersList)
+                                    {
+                                        if (member.ID == removeID)
+                                        {
+                                            removedMember = member;
+                                            break;
+                                        }
+                                    }
+
+                                    if (removedMember == null)
+                                    {
+                                        Console.WriteLine("No member found with that ID.");
+                                    }
+
+                                    else
+                                    {
+                                        membersList.Remove(removedMember);
+                                        Console.WriteLine($"Member {removedMember.Name} (ID: {removedMember.ID}) has been removed.");
+                                    }
+                                    */
                                 }
                                 catch (ArgumentException ex)
                                 {
@@ -91,6 +122,7 @@
                                 }
                                 break;
                             }
+                            /*
                         case "3":
                             {
                                 if (membersList.Count == 0)
@@ -119,6 +151,7 @@
                                 }
                                 break;
                             }
+                            */
                         case "5":
                             {
                                 Console.WriteLine("Closing Program");

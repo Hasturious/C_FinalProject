@@ -8,9 +8,9 @@ namespace C_FinalProject
 {
     public abstract class Member : IMembership
     {
-        private string Name { get; set; }
-        private string ID { get; set; }
-        private string MembershipPlan { get; set; }
+        protected string Name { get; set; }
+        protected string ID { get; set; }
+        protected string MembershipPlan { get; set; }
 
         //Standard or "Special
         protected string MemberType { get; set; }
