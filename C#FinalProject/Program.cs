@@ -11,6 +11,7 @@
 
             while (menuChoice != "5")
             {
+                Console.WriteLine("###GYM MEMBERSHIP SYSTEM###");
                 Console.Write("Please choose an option:\r\n1. Add Member\r\n2. Remove Member\r\n3. Display All Members\r\n4. Edit Membership Status\r\n5. Exit\r\n");
                 menuChoice = Console.ReadLine();
 
