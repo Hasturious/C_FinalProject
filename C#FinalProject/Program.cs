@@ -86,13 +86,13 @@
                         
                         case "2":
                             {
-                                try
+                                /*try
                                 {
                                     Console.Write("Enter User ID to remove them from system: ");
                                     string removeID = Console.ReadLine();
 
                                     //Find member from list
-                                    /*
+                                    
                                     Member removedMember = null;
 
                                     foreach (Member member in membersList)
@@ -114,18 +114,19 @@
                                         membersList.Remove(removedMember);
                                         Console.WriteLine($"Member {removedMember.Name} (ID: {removedMember.ID}) has been removed.");
                                     }
-                                    */
+                                    
                                 }
                                 catch (ArgumentException ex)
                                 {
 
-                                }
+                                }*/
+                                memberUtility.RemoveMember();
                                 break;
                             }
-                            /*
+                            
                         case "3":
                             {
-                                if (membersList.Count == 0)
+                                /*if (membersList.Count == 0)
                                 {
                                     Console.WriteLine("No members found.");
                                 }
@@ -136,22 +137,16 @@
                                     {
                                         Console.WriteLine(member); // Calls ToString() automatically
                                     }
-                                }
+                                }*/
+                                memberUtility.DisplayMembers();
                                 break;
                             }
                         case "4":
                             {
-                                try
-                                {
-
-                                }
-                                catch (ArgumentException ex)
-                                {
-
-                                }
+                                memberUtility.ChangeMembershipPlan();   
                                 break;
                             }
-                            */
+                            
                         case "5":
                             {
                                 Console.WriteLine("Closing Program");

@@ -56,5 +56,55 @@ namespace C_FinalProject
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
+
+        public void RemoveMember()
+        {
+            Console.Write("Enter the ID of the member to remove: ");
+            string id = Console.ReadLine();
+
+            Member memberToRemove = membersList.Find(m => m.ID == id);
+            if (memberToRemove != null)
+            {
+                membersList.Remove(memberToRemove);
+                Console.WriteLine("Member removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Member not found.");
+            }
+        }
+
+        public void DisplayMembers()
+        {
+            if (membersList.Count == 0)
+            {
+                Console.WriteLine("No members available.");
+                return;
+            }
+
+            foreach (var member in membersList)
+            {
+                Console.WriteLine(member);
+            }
+        }
+
+        public void ChangeMembershipPlan()
+        {
+            Console.Write("Enter the ID of the member to modify: ");
+            string id = Console.ReadLine();
+
+            Member member = membersList.Find(m => m.ID == id);
+            if (member != null)
+            {
+                Console.Write("Enter new membership plan (Monthly/Annually): ");
+                string newPlan = Console.ReadLine();
+                member.ChangeMembershipPlan(newPlan);
+                Console.WriteLine("Membership plan updated.");
+            }
+            else
+            {
+                Console.WriteLine("Member not found.");
+            }
+        }
     }
 }
