@@ -4,10 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //Gonna start with recreating my Pseudo code and go from there
-
-
-            //
+            //Creates an instance of member utility to handle all the methods used below
             MemberUtility memberUtility = new MemberUtility();
 
             string menuChoice = "0";

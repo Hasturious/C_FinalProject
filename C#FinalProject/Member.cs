@@ -59,7 +59,7 @@ namespace C_FinalProject
         /// <returns>All Member Types</returns>
         public override string ToString()
         {
-            return $"Name: {Name}, ID: {ID}, Membership Plan: {MembershipPlan} Membership Type: {MemberType}";
+            return $"Name: {Name}, ID: {ID}, Membership Plan: {MembershipPlan}, Membership Type: {MemberType}";
         }
     }
 }   

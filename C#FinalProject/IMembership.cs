@@ -9,7 +9,7 @@ namespace C_FinalProject
     public interface IMembership
     {
         /// <summary>
-        /// 
+        /// Changes the membership plan from monthly annually or vice versa
         /// </summary>
         /// <param name="newPlan"></param>
         void ChangeMembershipPlan(string newPlan);
