@@ -8,6 +8,10 @@ namespace C_FinalProject
 {
     public interface IMembership
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newPlan"></param>
         void ChangeMembershipPlan(string newPlan);
     }
 }

@@ -29,6 +29,15 @@ namespace C_FinalProject
         }
 
         /// <summary>
+        /// While I could set the ID string to public this allows us to retrieve the ID and use it elsewhere while keeping the value safe and sound
+        /// </summary>
+        /// <returns>ID</returns>
+        public string GetID()
+        {
+            return ID;
+        }
+
+        /// <summary>
         /// Interface usage to change the membership plan
         /// </summary>
         /// <param name="newPlan"></param>
